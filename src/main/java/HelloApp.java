@@ -3,17 +3,24 @@ public class HelloApp {
 
         String message;
 
-        // Check if arguments are provided
-        if (args.length > 0) {
-            // Join all names with comma
-            String names = String.join(", ", args);
-            message = "Hello, " + names + "!";
-        } else {
-            // Default message
+        // Check if no arguments are provided
+        if (args.length == 0) {
             message = "Hello, World!";
+        } else {
+            StringBuilder names = new StringBuilder();
+
+            // Enhanced for loop to iterate through arguments
+            for (String name : args) {
+                if (names.length() > 0) {
+                    names.append(", ");
+                }
+                names.append(name);
+            }
+
+            message = "Hello, " + names.toString() + "!";
         }
 
-        // Print output
+        // Display output
         System.out.println(message);
     }
 }
