@@ -7,17 +7,10 @@ public class HelloApp {
             return;
         }
 
-        // Build string with delimiter
-        StringBuilder nameBuilder = new StringBuilder();
+        // Join all names with comma
+        String names = String.join(", ", args);
 
-        for (String name : args) {
-            nameBuilder.append(name).append(", ");
-        }
-
-        // Remove trailing ", "
-        String names = nameBuilder.substring(0, nameBuilder.length() - 2);
-
-        // Print result
+        // Print greeting
         System.out.println("Hello, " + names + "!");
     }
 }
